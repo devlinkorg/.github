@@ -1,4 +1,4 @@
-# DevLink — Organization Overview
+# DevLink - Organization Overview
 
 ## Mission
 
@@ -10,10 +10,10 @@ DevLink is an execution-driven engineering infrastructure focused on building re
 
 DevLink operates as a distributed engineering organization that:
 
-- **Builds production systems** — Projects are designed to solve real problems and ship to real users.
-- **Maintains engineering standards** — All work follows documented quality gates, review processes, and architectural guidelines.
-- **Develops engineering talent** — Contributors grow through hands-on work on complex systems.
-- **Shares knowledge openly** — Documentation, decisions, and lessons learned are public by default.
+- **Builds production systems:** Projects are designed to solve real problems and ship to real users.
+- **Maintains engineering standards:** All work follows documented quality gates, review processes, and architectural guidelines.
+- **Develops engineering talent:** Contributors grow through hands-on work on complex systems.
+- **Shares knowledge openly:** Documentation, decisions, and lessons learned are public by default.
 
 ---
 
@@ -35,16 +35,28 @@ Active builds are maintained under the `/projects` directory. Each project follo
 
 ### Systems
 
-Shared infrastructure — architecture decisions, workflow definitions, and contribution standards — lives under `/systems`.
+Shared infrastructure, including architecture decisions, workflow definitions, and contribution standards, lives under `/systems`.
+
+---
+
+## Contributor Routing
+
+| Need | Route |
+|---|---|
+| Start contributing | [Onboarding Guide](onboarding.md) |
+| Learn the issue-to-PR workflow | [Workflow Guide](../systems/workflow.md) |
+| Open an issue | [Issue chooser](https://github.com/devlinkorg/.github/issues/new/choose) |
+| Ask a question | [GitHub Discussions](https://github.com/devlinkorg/.github/discussions) |
+| Report a vulnerability | [Security Policy](https://github.com/devlinkorg/.github/security/policy) |
 
 ---
 
 ## Values
 
 1. **Ship working software.** Ideas without execution have no value.
-2. **Write it down.** If it isn't documented, it doesn't exist.
+2. **Write it down.** If it is not documented, it does not exist.
 3. **Raise the bar.** Every contribution should leave the codebase better than it was found.
-4. **Own your work.** Accountability is not assigned — it is taken.
+4. **Own your work.** Accountability is not assigned; it is taken.
 5. **Collaborate openly.** Transparent communication accelerates progress.
 
 ---

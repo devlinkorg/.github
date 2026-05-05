@@ -1,51 +1,62 @@
-## Description
+## Summary
 
-Provide a clear and concise description of the changes in this PR.
+Describe what changed and why.
 
-## Related Issue
+## Linked Issue
 
 Closes #
 
+If there is no issue, explain why this PR is safe to review without one:
+
 ## Type of Change
 
-- [ ] Bug fix (non-breaking change that fixes an issue)
-- [ ] New feature (non-breaking change that adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] Bug fix
+- [ ] Feature or workflow improvement
 - [ ] Documentation update
-- [ ] Refactoring (no functional changes)
-- [ ] Performance improvement
-- [ ] Test update
+- [ ] Template or GitHub routing update
+- [ ] CI, automation, or maintenance change
 
 ## Changes Made
 
-Summarize the key changes:
-
 - 
 - 
 - 
 
-## Testing
+## Documentation Impact
 
-Describe the tests performed to verify these changes:
+- [ ] Documentation was updated
+- [ ] Documentation was reviewed and no update is needed
+- [ ] This is documentation-only
 
-- [ ] Unit tests added/updated
-- [ ] Integration tests added/updated
-- [ ] Manual testing completed
+## Test Evidence
 
-## Checklist
+List the exact checks you ran, including manual review when applicable.
 
-- [ ] My code follows the project's style guidelines
-- [ ] I have performed a self-review of my code
-- [ ] I have added comments where the logic is non-obvious
-- [ ] I have updated relevant documentation
-- [ ] My changes generate no new warnings or errors
-- [ ] I have added tests that prove my fix or feature works
-- [ ] All existing tests pass locally
+- [ ] Markdown links checked
+- [ ] Markdown lint checked
+- [ ] GitHub template/frontmatter reviewed
+- [ ] Manual rendered-doc review completed
+- [ ] Not applicable, with reason:
 
-## Screenshots
+## Release Note / Changelog
 
-If applicable, add screenshots to demonstrate the changes.
+- [ ] CHANGELOG.md updated
+- [ ] No changelog entry needed because:
 
-## Additional Notes
+## Author Checklist
 
-Any other information reviewers should be aware of.
+- [ ] The PR routes contributors to the correct GitHub location when links or templates are changed
+- [ ] Public GitHub links target `https://github.com/devlinkorg/.github` unless intentionally external
+- [ ] Existing local documentation links still resolve
+- [ ] The change is scoped and avoids unrelated rewrites
+
+## Reviewer Checklist
+
+- [ ] The linked issue or explanation gives enough review context
+- [ ] The contributor workflow remains clear from issue to PR to merge
+- [ ] Test evidence is appropriate for the change
+- [ ] Documentation-only changes render cleanly and use consistent terminology
+
+## Screenshots or Rendered Output
+
+Add screenshots or rendered Markdown notes when the visual output changed.

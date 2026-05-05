@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- GitHub issue forms for bug reports, feature requests, and documentation updates
+- Contributor routing tables for onboarding, workflow, and repository entry points
 - Organization repository structure with root documentation
 - Guild directories for Web Engineering, AI/ML, and DevOps
 - Project scaffolds for LinkBoard and Sentinel
@@ -18,9 +20,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - GitHub configuration: issue templates, PR template, CI workflow
 - Security policy and reporting guidelines
 
+### Changed
+
+- Normalized public GitHub workflow links to `devlinkorg/.github`
+- Strengthened the pull request template with documentation, test evidence, and reviewer routing checks
+- Tuned documentation link checking and stale automation for repository workflow changes
+
+### Fixed
+
+- Cleaned broken rendered arrows, dashes, and tree diagrams in core documentation
+
 ---
 
-## [1.0.0] — 2026-05-05
+## [1.0.0] - 2026-05-05
 
 ### Added
 

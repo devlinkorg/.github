@@ -1,0 +1,57 @@
+name: Bug report
+description: Report a confirmed or suspected defect.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Use this form for defects in repository documentation, workflow routing, templates, or project scaffolds.
+  - type: input
+    id: area
+    attributes:
+      label: Affected area
+      description: Name the document, workflow, template, guild, or project involved.
+      placeholder: "Example: docs/onboarding.md, PR template, issue chooser"
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken or confusing?
+      placeholder: "Describe the issue in a few sentences."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the exact steps someone can follow to see the issue.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should happen instead?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add screenshots, links, logs, or related issues if useful.
+    validations:
+      required: false

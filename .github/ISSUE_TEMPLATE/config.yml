@@ -1,8 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Discussions
-    url: https://github.com/devlink-org/devlink/discussions
-    about: Use Discussions for questions, ideas, and general conversation.
+  - name: Ask a question
+    url: https://github.com/devlinkorg/.github/discussions
+    about: Use Q&A for setup help, contributor questions, and workflow clarification.
+  - name: Propose an idea
+    url: https://github.com/devlinkorg/.github/discussions
+    about: Use Ideas for early proposals before they are ready for a scoped issue.
   - name: Security Vulnerability
-    url: https://github.com/devlink-org/devlink/security/policy
-    about: Report security vulnerabilities through our security policy.
+    url: https://github.com/devlinkorg/.github/security/policy
+    about: Report security vulnerabilities privately through the security policy.

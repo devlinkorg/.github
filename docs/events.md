@@ -57,7 +57,7 @@ Time-boxed initiatives where members from different guilds collaborate on projec
 
 To propose a new event or initiative:
 
-1. Open a [Discussion](https://github.com/devlink-org/devlink/discussions) with the `event-proposal` label.
+1. Open a [Discussion](https://github.com/devlinkorg/.github/discussions) with the `event-proposal` label.
 2. Include: objective, format, frequency, and required resources.
 3. The core team will review and respond within one week.
 

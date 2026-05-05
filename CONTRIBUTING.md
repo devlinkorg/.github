@@ -1,18 +1,34 @@
 # Contributing to DevLink
 
-Thank you for your interest in contributing to DevLink. This document outlines the standards, workflows, and expectations for all contributors.
+Thank you for your interest in contributing to DevLink. This guide explains the GitHub workflow, documentation expectations, and review standards for this repository.
 
 ---
 
 ## Table of Contents
 
+- [Where to Go Next](#where-to-go-next)
 - [Prerequisites](#prerequisites)
+- [Issue Workflow](#issue-workflow)
 - [Branching Strategy](#branching-strategy)
 - [Commit Conventions](#commit-conventions)
 - [Pull Request Workflow](#pull-request-workflow)
-- [Code Quality Standards](#code-quality-standards)
-- [Issue Guidelines](#issue-guidelines)
+- [Documentation-Only Changes](#documentation-only-changes)
+- [Quality Standards](#quality-standards)
 - [Review Process](#review-process)
+
+---
+
+## Where to Go Next
+
+| Need | Route |
+|---|---|
+| New contributor setup | [docs/onboarding.md](docs/onboarding.md) |
+| Full workflow details | [systems/workflow.md](systems/workflow.md) |
+| Bug report | [Bug issue form](https://github.com/devlinkorg/.github/issues/new?template=bug_report.yml) |
+| Feature or workflow request | [Feature issue form](https://github.com/devlinkorg/.github/issues/new?template=feature_request.yml) |
+| Documentation improvement | [Documentation issue form](https://github.com/devlinkorg/.github/issues/new?template=documentation.yml) |
+| Questions or ideas | [GitHub Discussions](https://github.com/devlinkorg/.github/discussions) |
+| Security report | [Security Policy](https://github.com/devlinkorg/.github/security/policy) |
 
 ---
 
@@ -22,7 +38,21 @@ Before contributing, ensure you have:
 
 1. Read and agreed to the [Code of Conduct](CODE_OF_CONDUCT.md).
 2. Reviewed the [Onboarding Guide](docs/onboarding.md).
-3. Familiarized yourself with the relevant [Guild](guilds/) standards for your domain.
+3. Checked whether the work belongs to a specific [Guild](guilds/) or project.
+4. Searched existing [issues](https://github.com/devlinkorg/.github/issues) and [discussions](https://github.com/devlinkorg/.github/discussions).
+
+---
+
+## Issue Workflow
+
+All scoped work should start from an issue unless a maintainer confirms that the change is small enough to proceed directly.
+
+1. Choose the correct issue form from the [issue chooser](https://github.com/devlinkorg/.github/issues/new/choose).
+2. Include enough context for maintainers to route and prioritize the work.
+3. Wait for triage when the change affects workflow, governance, security, or project direction.
+4. Link your pull request to the issue with `Closes #123`, `Fixes #123`, or a clear explanation if no issue exists.
+
+Use [GitHub Discussions](https://github.com/devlinkorg/.github/discussions) for early ideas, broad questions, or proposals that are not ready for implementation.
 
 ---
 
@@ -34,19 +64,19 @@ DevLink follows a **trunk-based development** model with short-lived feature bra
 
 | Prefix | Purpose | Example |
 |---|---|---|
-| `feat/` | New feature | `feat/user-authentication` |
-| `fix/` | Bug fix | `fix/login-redirect-loop` |
-| `docs/` | Documentation update | `docs/update-onboarding` |
-| `refactor/` | Code refactoring | `refactor/api-client-structure` |
-| `test/` | Test additions or updates | `test/auth-unit-tests` |
-| `chore/` | Maintenance tasks | `chore/update-dependencies` |
+| `feat/` | New feature | `feat/contributor-dashboard` |
+| `fix/` | Bug fix | `fix/broken-onboarding-link` |
+| `docs/` | Documentation update | `docs/update-routing-guide` |
+| `refactor/` | Code or documentation structure refactor | `refactor/workflow-sections` |
+| `test/` | Test additions or updates | `test/docs-link-check` |
+| `chore/` | Maintenance tasks | `chore/update-actions` |
 
 ### Branch Rules
 
-- All branches are created from `main`.
-- Branches must be up-to-date with `main` before merging.
-- Stale branches (no activity for 14 days) are subject to cleanup.
-- Direct commits to `main` are not permitted.
+- Create branches from `main`.
+- Keep branches focused and short-lived.
+- Keep branches up to date with `main` before merge.
+- Do not commit directly to `main`.
 
 ---
 
@@ -56,7 +86,7 @@ All commits must follow the [Conventional Commits](https://www.conventionalcommi
 
 ### Format
 
-```
+```text
 <type>(<scope>): <description>
 
 [optional body]
@@ -68,115 +98,96 @@ All commits must follow the [Conventional Commits](https://www.conventionalcommi
 
 | Type | Description |
 |---|---|
-| `feat` | A new feature |
-| `fix` | A bug fix |
+| `feat` | New feature or workflow capability |
+| `fix` | Bug fix |
 | `docs` | Documentation changes |
-| `style` | Formatting changes (no logic change) |
-| `refactor` | Code change that neither fixes a bug nor adds a feature |
-| `test` | Adding or updating tests |
-| `chore` | Build process or tooling changes |
-| `perf` | Performance improvement |
+| `style` | Formatting changes with no content or behavior change |
+| `refactor` | Structure change that does not alter intended behavior |
+| `test` | Test additions or updates |
+| `chore` | Build, tooling, or maintenance changes |
 | `ci` | CI/CD configuration changes |
 
 ### Examples
 
-```
-feat(auth): add OAuth2 login flow
+```text
+docs(onboarding): update first contribution route
 
-fix(api): resolve null pointer in user endpoint
+fix(templates): route security reports to policy page
 
-docs(readme): update project structure section
+ci(docs): exclude discussion URLs from link checker
 ```
 
 ### Rules
 
-- Use the imperative mood in the description ("add", not "added").
+- Use the imperative mood in the description, such as "add" rather than "added".
 - Do not end the description with a period.
 - Keep the first line under 72 characters.
-- Reference related issues in the footer (e.g., `Closes #42`).
+- Reference related issues in the footer when applicable.
 
 ---
 
 ## Pull Request Workflow
 
-### 1. Before Opening a PR
+### Before Opening a PR
 
-- Ensure your branch is up-to-date with `main`.
-- Run all applicable linters and tests locally.
-- Verify that your changes do not introduce regressions.
+- Confirm your branch is based on `main`.
+- Run the relevant checks listed in [Test Evidence](.github/pull_request_template.md).
+- Verify changed links route to `https://github.com/devlinkorg/.github` unless intentionally external.
+- Update documentation when workflow, routing, templates, or expectations change.
 
-### 2. PR Requirements
+### PR Requirements
 
-- Use the [Pull Request Template](/.github/pull_request_template.md).
-- Provide a clear, concise title following commit conventions.
-- Include a description of **what** changed and **why**.
-- Link related issues.
-- Add relevant labels.
+- Use the [Pull Request Template](.github/pull_request_template.md).
+- Provide a clear summary of what changed and why.
+- Link the issue or explain why no issue is needed.
+- Include test evidence, even for documentation-only changes.
+- Identify changelog impact.
 
-### 3. Review Process
+### Review and Merge
 
-- All PRs require at least **one approving review** before merge.
-- Reviewers should respond within **48 hours**.
-- Address all review comments before requesting re-review.
-- Use "Request Changes" for blocking issues and "Comment" for suggestions.
-
-### 4. Merging
-
-- PRs are merged via **squash merge** to maintain a clean commit history.
-- The PR author is responsible for resolving merge conflicts.
-- Delete the feature branch after merge.
+- All PRs require at least one approving review before merge.
+- Reviewers should respond within 48 hours when possible.
+- Authors should address all blocking feedback before requesting re-review.
+- PRs are squash-merged into `main`.
+- The author or maintainer closes the loop by ensuring the linked issue is closed or updated.
 
 ---
 
-## Code Quality Standards
+## Documentation-Only Changes
 
-### General
+This repository is primarily documentation, routing, and workflow scaffolding, so documentation-only changes still need careful review.
 
-- Write clear, self-documenting code.
-- Follow the principle of least surprise.
-- Prefer readability over cleverness.
-- Keep functions and methods focused (single responsibility).
+For documentation-only PRs:
+
+- Check local links and important public GitHub links.
+- Preview rendered Markdown when structure, tables, diagrams, or badges change.
+- Keep terminology consistent across `README.md`, `CONTRIBUTING.md`, `docs/`, `systems/`, and `profile/`.
+- Update the issue forms or PR template when contributor routing changes.
+- Add a changelog entry when the change affects public workflow expectations.
+
+---
+
+## Quality Standards
 
 ### Documentation
 
-- All public APIs must be documented.
-- Complex logic requires inline comments explaining the **why**, not the **what**.
-- README files are required for all projects and significant modules.
+- Write for the next contributor who has not seen the internal conversation.
+- Prefer direct links to the canonical route over duplicate instructions.
+- Use ASCII diagrams and punctuation unless a file already requires otherwise.
+- Keep README files current for all projects and significant modules.
+
+### Code and Project Scaffolds
+
+- Write clear, self-documenting code.
+- Follow the principle of least surprise.
+- Keep functions and modules focused.
+- Document public APIs and complex operational decisions.
 
 ### Testing
 
-- New features must include corresponding tests.
-- Bug fixes must include a regression test.
-- Maintain or improve existing test coverage.
-
-### Linting and Formatting
-
-- All code must pass the project's configured linters.
-- Use the project's established formatting configuration.
-- Do not disable linting rules without justification and team approval.
-
----
-
-## Issue Guidelines
-
-### Creating Issues
-
-- Search existing issues before creating a new one.
-- Use the appropriate [Issue Template](/.github/ISSUE_TEMPLATE/).
-- Provide sufficient context for reproduction (for bugs) or justification (for features).
-- Apply relevant labels.
-
-### Labels
-
-| Label | Purpose |
-|---|---|
-| `good first issue` | Suitable for new contributors |
-| `bug` | Confirmed defect |
-| `enhancement` | Feature request |
-| `documentation` | Documentation improvement |
-| `help wanted` | Open for community contribution |
-| `priority: high` | Requires immediate attention |
-| `priority: low` | Can be addressed when capacity allows |
+- New code features must include corresponding tests.
+- Bug fixes must include regression coverage when possible.
+- Documentation changes should include link checks, lint checks, or manual rendered review.
 
 ---
 
@@ -184,23 +195,22 @@ docs(readme): update project structure section
 
 ### For Reviewers
 
-- Review within 48 hours of assignment.
+- Check that the contributor route is clear from issue to PR to merge.
 - Focus on correctness, maintainability, and adherence to standards.
 - Be constructive and specific in feedback.
-- Approve only when all blocking concerns are resolved.
+- Approve only when blocking concerns are resolved.
 
 ### For Authors
 
 - Respond to all review comments.
 - Do not dismiss reviews without discussion.
 - Keep PRs small and focused for faster review cycles.
+- Update the PR description when the implementation changes during review.
 
 ---
 
 ## Questions
 
-If you have questions about the contribution process, open a [Discussion](https://github.com/devlink-org/devlink/discussions) or reach out to a guild lead.
-
----
+If you have questions about the contribution process, open a [GitHub Discussion](https://github.com/devlinkorg/.github/discussions).
 
 Thank you for contributing to DevLink. Every contribution strengthens the systems we build together.

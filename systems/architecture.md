@@ -8,26 +8,22 @@ DevLink's architecture is designed for modularity, scalability, and clear owners
 
 ## Organizational Architecture
 
-```
+```text
 DevLink Organization
-│
-├── Core Team
-│   └── Strategic direction, governance, cross-guild coordination
-│
-├── Guilds (Domain Groups)
-│   ├── Web Engineering
-│   ├── AI / Machine Learning
-│   └── DevOps / Infrastructure
-│
-├── Projects (Active Builds)
-│   ├── Owned by a guild or cross-guild team
-│   ├── Follow standardized structure
-│   └── Independent deployment lifecycle
-│
-└── Systems (Shared Infrastructure)
-    ├── Architecture standards
-    ├── Workflow definitions
-    └── Contribution guidelines
+|-- Core Team
+|   `-- Strategic direction, governance, cross-guild coordination
+|-- Guilds
+|   |-- Web Engineering
+|   |-- AI / Machine Learning
+|   `-- DevOps / Infrastructure
+|-- Projects
+|   |-- Owned by a guild or cross-guild team
+|   |-- Follow standardized structure
+|   `-- Independent deployment lifecycle
+`-- Systems
+    |-- Architecture standards
+    |-- Workflow definitions
+    `-- Contribution guidelines
 ```
 
 ---
@@ -38,7 +34,7 @@ All projects within DevLink adhere to the following architectural principles:
 
 ### 1. Separation of Concerns
 
-Each module, service, or component should have a single, well-defined responsibility. Cross-cutting concerns (logging, authentication, error handling) should be implemented as shared utilities or middleware.
+Each module, service, or component should have a single, well-defined responsibility. Cross-cutting concerns such as logging, authentication, and error handling should be implemented as shared utilities or middleware.
 
 ### 2. API-First Design
 
@@ -46,7 +42,7 @@ Systems that expose functionality to other services or clients must define their
 
 ### 3. Environment Isolation
 
-Projects must support clean separation between development, staging, and production environments. Configuration should be externalized via environment variables.
+Projects must support clean separation between development, staging, and production environments. Configuration should be externalized through environment variables.
 
 ### 4. Stateless Services
 
@@ -56,9 +52,9 @@ Where applicable, services should be designed as stateless to enable horizontal 
 
 All production systems must implement:
 
-- **Structured logging** — JSON-formatted, with correlation IDs.
-- **Health checks** — Standard endpoints for liveness and readiness.
-- **Metrics** — Key performance indicators exposed for monitoring.
+- **Structured logging:** JSON-formatted logs with correlation IDs.
+- **Health checks:** Standard endpoints for liveness and readiness.
+- **Metrics:** Key performance indicators exposed for monitoring.
 
 ---
 
@@ -107,15 +103,16 @@ Storage technology selection should be driven by access patterns:
 
 ### Principles
 
-- **Least privilege** — Grant minimum necessary permissions.
-- **Defense in depth** — Multiple layers of security controls.
-- **Secure defaults** — Systems should be secure out of the box.
+- **Least privilege:** Grant minimum necessary permissions.
+- **Defense in depth:** Use multiple layers of security controls.
+- **Secure defaults:** Systems should be secure out of the box.
 
 ### Requirements
 
 - Secrets must never be committed to version control.
 - All external communication must use TLS.
 - Authentication and authorization must be implemented for all user-facing and inter-service endpoints.
+- Security vulnerabilities must be reported through the [Security Policy](../SECURITY.md).
 
 ---
 
@@ -123,7 +120,7 @@ Storage technology selection should be driven by access patterns:
 
 Significant architectural decisions are documented as Architecture Decision Records (ADRs) within the relevant project's `docs/` directory, following this format:
 
-```
+```text
 # ADR-{number}: {title}
 
 ## Status
@@ -145,3 +142,4 @@ Significant architectural decisions are documented as Architecture Decision Reco
 
 - [Workflow Guide](workflow.md)
 - [Contribution Guidelines](contribution-guidelines.md)
+- [GitHub Discussions](https://github.com/devlinkorg/.github/discussions)

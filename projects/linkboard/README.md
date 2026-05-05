@@ -25,27 +25,27 @@ LinkBoard is a real-time collaborative task management platform designed for eng
 
 ## Architecture
 
-```
+```text
 linkboard/
-├── src/
-│   ├── api/              # REST API layer
-│   │   ├── routes/       # Route definitions
-│   │   ├── middleware/    # Authentication, validation, error handling
-│   │   └── controllers/  # Request handlers
-│   ├── core/             # Business logic
-│   │   ├── tasks/        # Task management domain
-│   │   ├── boards/       # Board management domain
-│   │   └── users/        # User management domain
-│   ├── data/             # Data access layer
-│   │   ├── models/       # Database models
-│   │   ├── migrations/   # Schema migrations
-│   │   └── repositories/ # Data access abstractions
-│   ├── realtime/         # WebSocket and event handling
-│   └── shared/           # Shared utilities and types
-├── docs/
-│   ├── api.md            # API specification
-│   └── architecture.md   # Architecture decisions
-└── README.md
+|-- src/
+|   |-- api/              REST API layer
+|   |   |-- routes/       Route definitions
+|   |   |-- middleware/   Authentication, validation, error handling
+|   |   `-- controllers/  Request handlers
+|   |-- core/             Business logic
+|   |   |-- tasks/        Task management domain
+|   |   |-- boards/       Board management domain
+|   |   `-- users/        User management domain
+|   |-- data/             Data access layer
+|   |   |-- models/       Database models
+|   |   |-- migrations/   Schema migrations
+|   |   `-- repositories/ Data access abstractions
+|   |-- realtime/         WebSocket and event handling
+|   `-- shared/           Shared utilities and types
+|-- docs/
+|   |-- api.md            API specification
+|   `-- architecture.md   Architecture decisions
+`-- README.md
 ```
 
 ---
@@ -76,8 +76,8 @@ linkboard/
 
 ```bash
 # Clone the repository
-git clone https://github.com/devlink-org/devlink.git
-cd devlink/projects/linkboard
+git clone https://github.com/devlinkorg/.github.git
+cd .github/projects/linkboard
 
 # Install dependencies
 npm install
@@ -97,10 +97,10 @@ npm run dev
 
 | Variable | Description | Default |
 |---|---|---|
-| `DATABASE_URL` | PostgreSQL connection string | — |
+| `DATABASE_URL` | PostgreSQL connection string | Not set |
 | `REDIS_URL` | Redis connection string | `redis://localhost:6379` |
 | `PORT` | Server port | `3000` |
-| `JWT_SECRET` | JWT signing secret | — |
+| `JWT_SECRET` | JWT signing secret | Not set |
 | `NODE_ENV` | Runtime environment | `development` |
 
 ---
@@ -143,12 +143,12 @@ See [docs/api.md](docs/api.md) for the complete API specification.
 
 Tests are organized by domain:
 
-```
+```text
 src/
-├── core/tasks/__tests__/
-├── core/boards/__tests__/
-├── api/routes/__tests__/
-└── shared/__tests__/
+|-- core/tasks/__tests__/
+|-- core/boards/__tests__/
+|-- api/routes/__tests__/
+`-- shared/__tests__/
 ```
 
 Run the full suite:

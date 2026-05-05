@@ -13,7 +13,7 @@
 
 ---
 
-[Overview](#overview) · [Architecture](#architecture) · [Domains](#engineering-domains) · [Projects](#active-projects) · [Getting Started](#getting-started) · [Contributing](#contributing)
+[Overview](#overview) | [GitHub Workflow](#github-workflow) | [Architecture](#architecture) | [Domains](#engineering-domains) | [Projects](#active-projects) | [Getting Started](#getting-started)
 
 </div>
 
@@ -23,7 +23,7 @@
 
 DevLink is a structured engineering organization that designs, builds, and deploys production-grade software systems. Our focus is on measurable output, technical rigor, and scalable collaboration across distributed teams.
 
-This repository serves as the **central hub** for all organizational activity — project catalogs, domain structures, contribution workflows, architectural standards, and community resources.
+This repository serves as the **central hub** for organizational documentation, contributor routing, project catalogs, domain structures, workflow standards, and community resources.
 
 ### Core Principles
 
@@ -37,19 +37,37 @@ This repository serves as the **central hub** for all organizational activity �
 
 ---
 
+## GitHub Workflow
+
+Use these entry points when you need to take action:
+
+| Need | Go here |
+|---|---|
+| Start contributing | [Onboarding Guide](docs/onboarding.md) |
+| Report a bug | [Bug report](https://github.com/devlinkorg/.github/issues/new?template=bug_report.yml) |
+| Request a feature or workflow improvement | [Feature request](https://github.com/devlinkorg/.github/issues/new?template=feature_request.yml) |
+| Improve documentation | [Documentation update](https://github.com/devlinkorg/.github/issues/new?template=documentation.yml) |
+| Ask a question | [GitHub Discussions](https://github.com/devlinkorg/.github/discussions) |
+| Report a vulnerability | [Security Policy](https://github.com/devlinkorg/.github/security/policy) |
+| Open a pull request | [Pull Request Template](.github/pull_request_template.md) |
+
+For the full issue-to-merge process, see the [Workflow Guide](systems/workflow.md).
+
+---
+
 ## Architecture
 
 DevLink operates as a modular engineering system with clearly defined boundaries between domains, projects, and shared infrastructure.
 
-```
+```text
 DevLink
-├── domains (guilds)        — Specialized engineering verticals
-│   ├── Web Engineering
-│   ├── AI / Machine Learning
-│   └── DevOps / Infrastructure
-├── projects                — Active product and system builds
-├── systems                 — Shared architecture, workflows, and standards
-└── community               — Onboarding, events, and documentation
+|-- guilds/       Specialized engineering verticals
+|   |-- web/      Web Engineering
+|   |-- ai-ml/    AI / Machine Learning
+|   `-- devops/   DevOps / Infrastructure
+|-- projects/     Active product and system builds
+|-- systems/      Shared architecture, workflows, and standards
+`-- docs/         Onboarding, events, and community documentation
 ```
 
 For detailed architectural documentation, see [`/systems/architecture.md`](systems/architecture.md).
@@ -58,7 +76,7 @@ For detailed architectural documentation, see [`/systems/architecture.md`](syste
 
 ## Engineering Domains
 
-DevLink organizes engineering work into **guilds** — domain-specific groups that own a vertical of technical expertise.
+DevLink organizes engineering work into **guilds**, domain-specific groups that own a vertical of technical expertise.
 
 | Guild | Focus Area | Key Technologies | Directory |
 |---|---|---|---|
@@ -81,11 +99,11 @@ Projects are maintained under the [`/projects`](projects/) directory. Each proje
 
 ### Project Structure
 
-```
+```text
 project-name/
-├── README.md           — Overview, setup, and usage
-├── src/                — Source code
-└── docs/               — Architecture decisions, API docs
+|-- README.md    Overview, setup, and usage
+|-- src/         Source code
+`-- docs/        Architecture decisions and API docs
 ```
 
 Browse all projects in the [`/projects`](projects/) directory.
@@ -94,49 +112,20 @@ Browse all projects in the [`/projects`](projects/) directory.
 
 ## Repository Structure
 
-```
+```text
 .
-├── .github/                        # GitHub configuration
-│   ├── ISSUE_TEMPLATE/             # Standardized issue templates
-│   │   ├── bug_report.md
-│   │   ├── feature_request.md
-│   │   ├── documentation.md
-│   │   └── config.yml
-│   ├── workflows/                  # CI/CD automation
-│   │   ├── ci.yml
-│   │   ├── docs.yml
-│   │   └── stale.yml
-│   └── pull_request_template.md
-├── docs/                           # Organization documentation
-│   ├── overview.md
-│   ├── community.md
-│   ├── events.md
-│   └── onboarding.md
-├── guilds/                         # Domain-based engineering groups
-│   ├── web/
-│   ├── ai-ml/
-│   └── devops/
-├── projects/                       # Active project catalog
-│   ├── linkboard/
-│   │   ├── README.md
-│   │   ├── src/
-│   │   └── docs/
-│   └── sentinel/
-│       ├── README.md
-│       ├── src/
-│       └── docs/
-├── systems/                        # Architecture and standards
-│   ├── architecture.md
-│   ├── workflow.md
-│   └── contribution-guidelines.md
-├── profile/                        # GitHub organization profile
-│   └── README.md
-├── CHANGELOG.md
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── SECURITY.md
-└── README.md
+|-- .github/       GitHub issue forms, PR template, and automation
+|-- docs/          Organization documentation
+|-- guilds/        Domain-based engineering groups
+|-- projects/      Active project catalog
+|-- systems/       Architecture, workflow, and contribution standards
+|-- profile/       GitHub organization profile
+|-- CHANGELOG.md
+|-- CODE_OF_CONDUCT.md
+|-- CONTRIBUTING.md
+|-- LICENSE
+|-- SECURITY.md
+`-- README.md
 ```
 
 ---
@@ -145,10 +134,11 @@ Browse all projects in the [`/projects`](projects/) directory.
 
 ### For New Contributors
 
-1. Read the [Onboarding Guide](docs/onboarding.md) to understand the organizational structure.
-2. Review the [Contribution Guidelines](CONTRIBUTING.md) for workflow and standards.
+1. Read the [Onboarding Guide](docs/onboarding.md) to understand the organization and contribution path.
+2. Review the [Contribution Guidelines](CONTRIBUTING.md) for branch, commit, PR, and review expectations.
 3. Explore the [Guilds](guilds/) to find a domain that matches your expertise.
-4. Browse [open issues](https://github.com/devlink-org/devlink/issues) labeled `good first issue`.
+4. Browse [open issues](https://github.com/devlinkorg/.github/issues) labeled `good first issue`.
+5. Ask questions in [GitHub Discussions](https://github.com/devlinkorg/.github/discussions) when you need help choosing a path.
 
 ### For Project Leads
 
@@ -160,14 +150,14 @@ Browse all projects in the [`/projects`](projects/) directory.
 
 ## Contributing
 
-We welcome contributions from engineers at all levels. Our contribution process is designed to be clear, predictable, and respectful of everyone's time.
+We welcome contributions from engineers at all levels. Our process is designed to be clear, predictable, and respectful of everyone's time.
 
 **Quick start:**
 
-1. Fork the repository
-2. Create a feature branch (`feat/your-feature-name`)
-3. Commit using [Conventional Commits](https://www.conventionalcommits.org/)
-4. Open a Pull Request against `main`
+1. Open or choose an issue from the [issue tracker](https://github.com/devlinkorg/.github/issues).
+2. Create a branch from `main` using the documented naming conventions.
+3. Commit using [Conventional Commits](https://www.conventionalcommits.org/).
+4. Open a pull request against `main` and complete the [PR template](.github/pull_request_template.md).
 
 For the complete guide, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -192,6 +182,7 @@ For the complete guide, see [CONTRIBUTING.md](CONTRIBUTING.md).
 | Organization Overview | [docs/overview.md](docs/overview.md) |
 | Community Guide | [docs/community.md](docs/community.md) |
 | Events and Initiatives | [docs/events.md](docs/events.md) |
+| GitHub Discussions | [github.com/devlinkorg/.github/discussions](https://github.com/devlinkorg/.github/discussions) |
 | Changelog | [CHANGELOG.md](CHANGELOG.md) |
 
 ---
@@ -204,6 +195,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 <div align="center">
 
-**DevLink** — Building systems that ship.
+**DevLink** - Building systems that ship.
 
 </div>

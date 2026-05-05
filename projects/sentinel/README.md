@@ -16,7 +16,7 @@ Sentinel is an infrastructure monitoring and alerting system built for observabi
 
 - Metric collection from multiple infrastructure sources
 - Configurable alerting rules with threshold and anomaly detection
-- Multi-channel notification delivery (email, Slack, webhook)
+- Multi-channel notification delivery using email, Slack, or webhooks
 - Dashboard API for visualization integrations
 - Health check aggregation across services
 - Alert history and incident timeline tracking
@@ -25,28 +25,28 @@ Sentinel is an infrastructure monitoring and alerting system built for observabi
 
 ## Architecture
 
-```
+```text
 sentinel/
-├── src/
-│   ├── collector/         # Metric collection agents
-│   │   ├── sources/       # Source-specific collectors (HTTP, gRPC, system)
-│   │   └── pipeline/      # Data ingestion pipeline
-│   ├── engine/            # Alert evaluation engine
-│   │   ├── rules/         # Rule definitions and parsing
-│   │   ├── evaluator/     # Threshold and anomaly evaluation
-│   │   └── state/         # Alert state management
-│   ├── notifier/          # Notification delivery
-│   │   ├── channels/      # Channel implementations (email, Slack, webhook)
-│   │   └── templates/     # Notification templates
-│   ├── api/               # REST API for configuration and queries
-│   │   ├── routes/        # Route definitions
-│   │   └── middleware/     # Authentication, rate limiting
-│   ├── storage/           # Time-series data storage layer
-│   └── shared/            # Shared utilities, types, and configuration
-├── docs/
-│   ├── deployment.md      # Deployment and operations guide
-│   └── architecture.md    # Architecture decisions
-└── README.md
+|-- src/
+|   |-- collector/        Metric collection agents
+|   |   |-- sources/      Source-specific collectors
+|   |   `-- pipeline/     Data ingestion pipeline
+|   |-- engine/           Alert evaluation engine
+|   |   |-- rules/        Rule definitions and parsing
+|   |   |-- evaluator/    Threshold and anomaly evaluation
+|   |   `-- state/        Alert state management
+|   |-- notifier/         Notification delivery
+|   |   |-- channels/     Channel implementations
+|   |   `-- templates/    Notification templates
+|   |-- api/              REST API for configuration and queries
+|   |   |-- routes/       Route definitions
+|   |   `-- middleware/   Authentication and rate limiting
+|   |-- storage/          Time-series data storage layer
+|   `-- shared/           Shared utilities, types, and configuration
+|-- docs/
+|   |-- deployment.md     Deployment and operations guide
+|   `-- architecture.md   Architecture decisions
+`-- README.md
 ```
 
 ---
@@ -70,16 +70,16 @@ sentinel/
 ### Prerequisites
 
 - Go >= 1.22
-- PostgreSQL >= 16.0 (with TimescaleDB extension)
+- PostgreSQL >= 16.0 with the TimescaleDB extension
 - Redis >= 7.0
-- Docker (optional, for containerized deployment)
+- Docker, optional for containerized deployment
 
 ### Setup
 
 ```bash
 # Clone the repository
-git clone https://github.com/devlink-org/devlink.git
-cd devlink/projects/sentinel
+git clone https://github.com/devlinkorg/.github.git
+cd .github/projects/sentinel
 
 # Install dependencies
 go mod download
@@ -99,7 +99,7 @@ make run
 
 | Variable | Description | Default |
 |---|---|---|
-| `DATABASE_URL` | TimescaleDB connection string | — |
+| `DATABASE_URL` | TimescaleDB connection string | Not set |
 | `REDIS_URL` | Redis connection string | `redis://localhost:6379` |
 | `PORT` | API server port | `8080` |
 | `NATS_URL` | NATS server URL | `nats://localhost:4222` |
